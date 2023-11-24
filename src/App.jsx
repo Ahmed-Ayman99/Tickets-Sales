@@ -1,11 +1,21 @@
+import GlobalStyles from "./styles/GlobalStyles";
+import Container from "./components/Container";
+import Header from "./components/Header";
+import ChartStats from "./components/ChartStats";
+import SalesSection from "./components/SalesSection";
+// import TiCketCard from "./components/TiCketCard";
+// import TiCketCard from "./components/TiCketCard";
+
 const App = () => {
   return (
-    <div className="app">
-      الفونت العربي الفونت العربي الفونت العربي
-      <div className="add">Add</div>
-      <div className="no">No</div>
-      App
-    </div>
+    <>
+      <GlobalStyles />
+      <Container className="container">
+        <Header />
+        <ChartStats />
+        <SalesSection />
+      </Container>
+    </>
   );
 };
 
