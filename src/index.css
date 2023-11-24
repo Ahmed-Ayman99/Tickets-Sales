@@ -1,0 +1,32 @@
+@import url("https://fonts.cdnfonts.com/css/neo-sans-arabic");
+
+:root {
+  --color-brand: #8a74f9;
+  --color-gray-700: #1c1c28;
+  --color-gray-600: #1e1b39;
+  --color-black-200: #92a1ad;
+  --color-black-50: #dddddd;
+  --color-gray-0: #ffffff;
+
+  --border-radius-tiny: 4px;
+  --border-radius-sm: 6px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12.47px;
+  --border-radius-3: 6.45px;
+}
+
+body[dir="rtl"] .app {
+  background-color: green;
+
+  & .add {
+    background-color: red;
+  }
+}
+
+.html {
+  font-size: 62.5%;
+}
+
+body[dir="rtl"] {
+  font-family: Neo Sans Arabic;
+}
