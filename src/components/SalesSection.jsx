@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { DEMO_DATA, DEMO_DATA_ARABIC } from "../utils/constants";
+import { DEMO_DATA, DEMO_DATA_ARABIC, PAGE_SIZE } from "../utils/constants";
 import { useDirection } from "../context/DirectionContext";
 import SalesContent from "./SalesContent";
 import SalesFooter from "./SalesFooter";
@@ -11,7 +11,6 @@ const SalesSection = () => {
   const { direction } = useDirection();
 
   const [currentPage, setCurrentPage] = useState(1);
-  const PAGE_SIZE = 4;
   const count = DEMO_DATA.length;
   const pagesCount = Math.ceil(count / PAGE_SIZE);
 

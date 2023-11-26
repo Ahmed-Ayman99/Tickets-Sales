@@ -30,6 +30,7 @@ const SalesTable = styled.div`
 
 const SalesTableContainer = styled.div`
   overflow-x: auto;
+  width: 100%;
   &::-webkit-scrollbar {
     height: 1rem;
   }
