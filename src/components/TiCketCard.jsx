@@ -8,12 +8,39 @@ const Card = styled.div`
   border-radius: var(--border-radius-lg);
 `;
 
+const CardContainer = styled.div`
+  /* @media (max-width: 25em) { */
+
+  @media (max-width: 72em) {
+    & {
+      padding: 0 22rem;
+      margin-bottom: 3.2rem;
+    }
+  }
+
+  @media (max-width: 50em) {
+    & {
+      padding: 0 12rem;
+      margin-bottom: 3.2rem;
+    }
+  }
+
+  @media (max-width: 25em) {
+    & {
+      padding: 0 1.2rem;
+      margin-bottom: 3.2rem;
+    }
+  }
+`;
+
 const TiCketCard = () => {
   return (
-    <Card>
-      <TicketInfo />
-      <TicketCode />
-    </Card>
+    <CardContainer>
+      <Card>
+        <TicketInfo />
+        <TicketCode />
+      </Card>
+    </CardContainer>
   );
 };
 

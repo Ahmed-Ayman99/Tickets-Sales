@@ -1,10 +1,9 @@
-import styled from "styled-components";
-
 import { HiOutlineDuplicate } from "react-icons/hi";
 import { RiDeleteBin5Line } from "react-icons/ri";
+import { useTranslation } from "react-i18next";
+import styled from "styled-components";
 
 import ButttonIcon from "./ButttonIcon";
-import { useTranslation } from "react-i18next";
 
 const TicketInfoStyles = styled.div`
   padding: 2.4rem 1.2rem 1.7rem;

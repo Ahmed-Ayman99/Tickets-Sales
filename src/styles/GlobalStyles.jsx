@@ -65,7 +65,6 @@ const GlobalStyles = createGlobalStyle`
   --color-gray-1200:#776f59;
   --color-gray-1300:#373737;
   --color-gray-1500:#2d2c27;
-  /* --color-gray-1600:#e8e8e8; */
   --color-gray-1600:#e8e8e8;
 
 
@@ -78,9 +77,6 @@ html {
 }
 
 body[dir="ltr"] {
-  /* font-family: "Inter", sans-serif; */
-
-  /* font-family: 'Inter', sans-serif; */
 font-family: 'Roboto', sans-serif;
 }
 

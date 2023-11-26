@@ -10,7 +10,6 @@ const SalesTable = styled.div`
   @media (max-width: 57em) {
     & {
       grid-template-columns: 0.8fr 3.33fr 2.6fr 2.8fr 6fr 2.67fr 3.3fr 6.67fr;
-      /* grid-template-columns: 0.8fr 3.33fr 2.6fr 2.8fr 6fr 2.67fr 3.3fr 6.67fr; */
     }
   }
 

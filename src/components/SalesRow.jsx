@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { HiTicket } from "react-icons/hi2";
 import { MdOutlineDownloadForOffline } from "react-icons/md";
+import { HiTicket } from "react-icons/hi2";
+import styled from "styled-components";
 
 import ButttonIcon from "./ButttonIcon";
 

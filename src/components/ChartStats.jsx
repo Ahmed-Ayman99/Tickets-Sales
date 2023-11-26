@@ -17,7 +17,7 @@ const ChartStatsStyles = styled.section`
   @media (max-width: 72em) {
     & {
       padding: 0 2.4rem;
-      gap: 2.4rem;
+      gap: 4.4rem;
       grid-template-columns: 1fr;
     }
   }

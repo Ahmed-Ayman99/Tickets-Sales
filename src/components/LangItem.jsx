@@ -1,4 +1,5 @@
 import i18next from "i18next";
+
 import { useDirection } from "../context/DirectionContext";
 
 const LangItem = ({ children, disabled, code, setShowLangs }) => {

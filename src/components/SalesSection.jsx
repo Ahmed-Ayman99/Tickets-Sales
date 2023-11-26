@@ -1,10 +1,11 @@
-import SalesHeader from "./SalesHeader";
+import { useState } from "react";
+
+import { DEMO_DATA, DEMO_DATA_ARABIC } from "../utils/constants";
+import { useDirection } from "../context/DirectionContext";
 import SalesContent from "./SalesContent";
 import SalesFooter from "./SalesFooter";
-import { DEMO_DATA, DEMO_DATA_ARABIC } from "../utils/constants";
+import SalesHeader from "./SalesHeader";
 import Pagination from "./Pagination";
-import { useState } from "react";
-import { useDirection } from "../context/DirectionContext";
 
 const SalesSection = () => {
   const { direction } = useDirection();
