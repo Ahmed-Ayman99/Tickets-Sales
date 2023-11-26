@@ -14,6 +14,10 @@ const BtnStyles = styled.button`
       body[dir="ltr"] & {
         margin-left: 2rem;
       }
+
+      body[dir="rtl"] & {
+        margin-right: 2rem;
+      }
     `}
 `;
 

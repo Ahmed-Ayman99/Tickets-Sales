@@ -1,4 +1,6 @@
+import { useTranslation } from "react-i18next";
 import { LuSend } from "react-icons/lu";
+import QRCode from "react-qr-code";
 import styled from "styled-components";
 
 const TicketCodeStyles = styled.div`
@@ -6,6 +8,10 @@ const TicketCodeStyles = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: end;
+
+  body[dir="rtl"] & {
+    flex-direction: row-reverse;
+  }
 `;
 
 const Figure = styled.figure`
@@ -13,19 +19,24 @@ const Figure = styled.figure`
   aspect-ratio: 1/1;
   background-color: #333;
   overflow: hidden;
+  border-radius: var(--border-radius-tiny);
 `;
 
 const DiscountAction = styled.div`
   gap: 1.7rem;
   display: flex;
   align-items: end;
+
+  body[dir="rtl"] & {
+    flex-direction: row-reverse;
+  }
 `;
 
 const Discount = styled.p`
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 1.3rem;
+  gap: 1.2rem;
   color: #fff;
   font-weight: 600;
 
@@ -57,6 +68,14 @@ const ShareButton = styled.button`
   font-size: 1.4rem;
   letter-spacing: 0.5px;
 
+  body[dir="rtl"] & {
+    flex-direction: row-reverse;
+
+    svg {
+      transform: rotate(-90deg);
+    }
+  }
+
   &:hover {
     background-color: var(--color-gray-0);
     color: var(--color-gray-700);
@@ -68,20 +87,31 @@ const ShareButton = styled.button`
 `;
 
 const TicketCode = () => {
+  const { t } = useTranslation();
+
   return (
     <TicketCodeStyles>
       <Figure>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos maxime
-        impedit nisi, cumque quibusdam iure, quos quasi, non hic vel saepe qui
-        consectetur veniam ullam!
+        <QRCode
+          style={{
+            height: "auto",
+            width: "100%",
+            padding: "3.5px",
+            background: "#fff",
+          }}
+          value="VALUE"
+          viewBox={`0 0 256 256`}
+        />
       </Figure>
+
       <DiscountAction>
         <ShareButton>
-          Share
+          {t("share")}
           <LuSend />
         </ShareButton>
+
         <Discount>
-          <span>discount</span> <span>25%</span>{" "}
+          <span>{t("discount")}</span> <span>{t("percentage")}</span>
         </Discount>
       </DiscountAction>
     </TicketCodeStyles>

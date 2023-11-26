@@ -1,21 +1,40 @@
 import styled from "styled-components";
+import { useState } from "react";
+
 import { CiSearch } from "react-icons/ci";
 import { LuSettings2 } from "react-icons/lu";
+import { useTranslation } from "react-i18next";
 import { RiArrowUpDownFill } from "react-icons/ri";
-import Button from "./Button";
+
 import CheckBox from "./CheckBox";
-import { useState } from "react";
+import Button from "./Button";
 
 const HeaderStyles = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 1.6rem;
+  flex-wrap: wrap;
+  gap: 2.4rem;
+  flex-direction: column-reverse;
 `;
 
 const SalesAction = styled.div`
   display: flex;
   align-items: center;
   gap: 1.7rem;
+
+  @media (max-width: 25em) {
+    & {
+      gap: 0rem;
+      padding: 0rem 0.8rem;
+    }
+  }
+`;
+
+const BookingTicket = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 const SalesTitle = styled.h3`
@@ -33,31 +52,43 @@ const FormContainer = styled.div`
 
 const Form = styled.form`
   display: flex;
-  align-items: stretch;
+  align-items: center;
   border: 1px solid var(--color-gray-200);
   background-color: var(--color-gray-0);
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  max-width: 27.7rem;
+  width: 27.7rem;
+  max-height: 3.6rem;
+  height: 3.6rem;
+  padding: 1rem;
 
-  button {
-    border-radius: var(--border-radius-tiny);
-    background-color: var(--color-gray-0);
-    align-self: stretch;
-    padding: 5px 6px;
-    border: none;
+  svg {
+    font-size: 1.6rem;
+    color: var(--color-gray-500);
+  }
 
-    svg {
-      font-size: 1.6rem;
-      color: var(--color-gray-500);
+  @media (max-width: 25em) {
+    & {
+      width: 18rem;
     }
   }
 `;
 
 const Input = styled.input`
   border: none;
-  padding: 0 6px;
+  padding: 5px 6px;
+  height: 100%;
 
   &:focus {
     outline: none;
     border: none;
+  }
+
+  &:placeholder-shown {
+    color: var(--color-gray-200);
+    font-weight: 400;
+    font-size: 10px;
   }
 `;
 
@@ -71,11 +102,6 @@ const SalesIcon = styled.button`
   outline: none;
 `;
 
-const BookingTicket = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
 const Status = styled.span`
   font-size: 1.4rem;
   line-height: 1.6rem;
@@ -84,18 +110,17 @@ const Status = styled.span`
 
 const SalesHeader = () => {
   const [isChecked, setIsChecked] = useState(true);
+  const { t } = useTranslation();
 
   return (
     <HeaderStyles>
       <SalesAction>
-        <SalesTitle>Ticket sales</SalesTitle>
+        <SalesTitle>{t("ticketSales")} </SalesTitle>
 
         <FormContainer>
           <Form>
-            <button>
-              <CiSearch />
-            </button>
-            <Input type="text" />
+            <CiSearch />
+            <Input type="text" placeholder={t("placeholderSearch")} />
           </Form>
 
           <SalesIcon>
@@ -109,14 +134,15 @@ const SalesHeader = () => {
       </SalesAction>
 
       <BookingTicket>
-        <Status>{isChecked ? "Active" : "inActive"}</Status>
+        <Status>{isChecked ? t("active") : t("inActive")}</Status>
+
         <CheckBox
           variation="primary"
           onChange={() => setIsChecked((prev) => !prev)}
           checked={isChecked}
         />
 
-        <Button variation="primary">Book a ticket</Button>
+        <Button variation="primary">{t("bookTicket")}</Button>
       </BookingTicket>
     </HeaderStyles>
   );

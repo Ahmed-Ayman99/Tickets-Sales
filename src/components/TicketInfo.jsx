@@ -1,7 +1,10 @@
-import { HiOutlineDuplicate } from "react-icons/hi";
 import styled from "styled-components";
 
+import { HiOutlineDuplicate } from "react-icons/hi";
+import { RiDeleteBin5Line } from "react-icons/ri";
+
 import ButttonIcon from "./ButttonIcon";
+import { useTranslation } from "react-i18next";
 
 const TicketInfoStyles = styled.div`
   padding: 2.4rem 1.2rem 1.7rem;
@@ -19,8 +22,8 @@ const TicketInfoStyles = styled.div`
     position: absolute;
     bottom: 0;
     border-radius: 50%;
-    border: 2.7rem solid;
-    border-color: var(--color-gray-0) var(--color-gray-0) transparent
+    border: 1.6rem solid;
+    border-color: var(--color-gray-1100) var(--color-gray-1100) transparent
       transparent;
   }
 
@@ -46,16 +49,23 @@ const TicketLink = styled.div`
   background-color: var(--color-gray-0);
   border-radius: var(--border-radius-md);
   display: flex;
-  gap: 1.6rem;
+  gap: 1rem;
   align-items: center;
   margin-bottom: 1.1rem;
-  padding: 0 1.6rem;
 `;
 
 const LinkTxt = styled.p`
   font-size: 1.3rem;
   line-height: 2.32rem;
   color: var(--color-gray-700);
+
+  body[dir="ltr"] & {
+    padding-right: 1rem;
+  }
+
+  body[dir="rtl"] & {
+    padding-left: 1rem;
+  }
 `;
 
 const TicketDate = styled.div`
@@ -65,19 +75,74 @@ const TicketDate = styled.div`
   letter-spacing: 0.6px;
 `;
 
-// const Delete = styled.div``;
+const Delete = styled.div`
+  position: absolute;
+  top: 2.4rem;
+  left: 3.2rem;
+
+  svg:hover + div {
+    opacity: 1;
+  }
+
+  svg {
+    font-size: 2.2rem;
+    width: 2.2rem;
+    color: var(--color-gray-0);
+    cursor: pointer;
+  }
+`;
+
+const Tooltip = styled.div`
+  transition: all 0.2s ease-in;
+  opacity: 0;
+  border-radius: 6.45px;
+  padding: 0.8rem 2.2rem;
+  background-color: var(--color-black);
+  color: var(--color-gray-1300);
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.29rem;
+  position: absolute;
+  top: calc(100% + 1.3rem);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+
+  &::after {
+    content: "";
+    display: block;
+    padding: 1.2rem;
+    position: absolute;
+    border-radius: var(--border-radius-tiny);
+    transform: translate(-50%, -30%) rotate(45deg);
+    top: 0;
+    left: 50%;
+    z-index: -1;
+    background-color: var(--color-black);
+  }
+`;
 
 const TicketInfo = () => {
+  const { t } = useTranslation();
+
   return (
     <TicketInfoStyles>
-      <TicketTitle>View the movie ticket</TicketTitle>
+      <Delete>
+        <RiDeleteBin5Line />
+        <Tooltip>{t("delete")}</Tooltip>
+      </Delete>
+
+      <TicketTitle>{t("observation")}</TicketTitle>
+
       <TicketLink>
         <ButttonIcon>
           <HiOutlineDuplicate />
         </ButttonIcon>
-        <LinkTxt>www.tazkty.com/473847</LinkTxt>
+
+        <LinkTxt>{t("ticketUrl")}</LinkTxt>
       </TicketLink>
-      <TicketDate>Effective until July 15, 2023</TicketDate>
+
+      <TicketDate>{t("ticketTemporary")}</TicketDate>
     </TicketInfoStyles>
   );
 };

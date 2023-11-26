@@ -12,6 +12,10 @@ const Label = styled.label`
       body[dir="ltr"] & {
         margin-left: 7.7px;
       }
+
+      body[dir="rtl"] & {
+        margin-right: 7.7px;
+      }
     `}
 
   input {
@@ -42,8 +46,8 @@ const SliderRound = styled.span`
     width: 1.5rem;
     aspect-ratio: 1/1;
     background-color: var(--color-gray-0);
-    left: 2px;
-    bottom: 2px;
+    left: 0.2rem;
+    bottom: 0.2rem;
     transition: 0.4s;
 
     ${({ checked }) =>
