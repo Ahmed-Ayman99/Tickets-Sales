@@ -18,7 +18,7 @@ const SalesTable = styled.div`
   align-items: center;
   justify-items: center;
   margin-bottom: 11px;
-  background-color: #fff;
+  background-color: var(--color-gray-0);
   border-radius: var(--border-radius-md);
   padding: 7px 6px;
 
@@ -30,7 +30,7 @@ const SalesTable = styled.div`
 `;
 
 const SalesTableContainer = styled.div`
-  overflow-x: scroll;
+  overflow-x: auto;
   &::-webkit-scrollbar {
     height: 1rem;
   }

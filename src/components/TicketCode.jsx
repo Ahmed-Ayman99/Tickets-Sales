@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { LuSend } from "react-icons/lu";
-import QRCode from "react-qr-code";
 import styled from "styled-components";
+import QRCode from "react-qr-code";
 
 const TicketCodeStyles = styled.div`
   padding: 1.5rem 3.2rem;

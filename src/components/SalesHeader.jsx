@@ -15,8 +15,13 @@ const HeaderStyles = styled.header`
   align-items: center;
   margin-bottom: 1.6rem;
   flex-wrap: wrap;
-  gap: 2.4rem;
-  flex-direction: column-reverse;
+
+  @media (max-width: 50em) {
+    & {
+      gap: 2.4rem;
+      flex-direction: column-reverse;
+    }
+  }
 `;
 
 const SalesAction = styled.div`
@@ -26,7 +31,7 @@ const SalesAction = styled.div`
 
   @media (max-width: 25em) {
     & {
-      gap: 0rem;
+      gap: 0.4rem;
       padding: 0rem 0.8rem;
     }
   }
@@ -79,6 +84,8 @@ const Input = styled.input`
   border: none;
   padding: 5px 6px;
   height: 100%;
+  background-color: var(--color-gray-0);
+  color: var(--color-gray-200);
 
   &:focus {
     outline: none;
@@ -100,6 +107,10 @@ const SalesIcon = styled.button`
   background-color: var(--color-gray-0);
   border-radius: var(--border-radius-sm);
   outline: none;
+
+  svg {
+    color: var(--color-gray-700);
+  }
 `;
 
 const Status = styled.span`

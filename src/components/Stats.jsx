@@ -1,9 +1,9 @@
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { useState } from "react";
 
 import SalesChart from "./SalesChart";
 import Select from "./Select";
-import { useTranslation } from "react-i18next";
 
 const StatsContainer = styled.div`
   background-color: var(--color-gray-0);

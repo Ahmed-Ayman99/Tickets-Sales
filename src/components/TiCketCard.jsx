@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import TicketInfo from "./TicketInfo";
 import TicketCode from "./TicketCode";
 

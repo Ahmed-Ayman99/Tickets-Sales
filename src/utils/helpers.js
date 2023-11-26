@@ -1,18 +1,34 @@
-export const DemoChartData = (() => {
-  const get12Months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
+export const DemoChartData = (direction) => {
+  const get12Months =
+    direction === "ltr"
+      ? [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ]
+      : [
+          "يناير",
+          "فبراير",
+          "مارس",
+          "إبريل",
+          "مايو",
+          "يونيو",
+          "يوليو",
+          "أغسطس",
+          "سبتمبر",
+          "أكتوبر",
+          "نوفمبر",
+          "ديسمبر",
+        ];
 
   const DEMO_TOTALSALES = [
     480, 200, 850, 1000, 400, 900, 700, 650, 800, 550, 700, 800,
@@ -30,4 +46,4 @@ export const DemoChartData = (() => {
   return result.map((label, ind) => {
     return { label: label, totalSales: DEMO_TOTALSALES[ind] };
   });
-})();
+};

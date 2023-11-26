@@ -6,6 +6,12 @@ const Label = styled.label`
   width: 3.4rem;
   height: 1.8rem;
 
+  & input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
   ${({ variation }) =>
     variation === "primary" &&
     css`
@@ -17,12 +23,6 @@ const Label = styled.label`
         margin-right: 7.7px;
       }
     `}
-
-  input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
 `;
 
 const SliderRound = styled.span`

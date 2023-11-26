@@ -10,8 +10,8 @@ import {
 } from "recharts";
 
 import { DemoChartData } from "../utils/helpers";
-
-const data = DemoChartData;
+import { useDarkMode } from "../context/DarkmodeContext";
+import { useDirection } from "../context/DirectionContext";
 
 const ChartBox = styled.div`
   & .recharts-cartesian-grid-horizontal line,
@@ -49,7 +49,10 @@ const ChartBox = styled.div`
 `;
 
 const SalesChart = () => {
-  const isDarkMode = false;
+  const { direction } = useDirection();
+  const data = DemoChartData(direction);
+
+  const { isDarkMode } = useDarkMode();
   const colors = isDarkMode
     ? {
         totalSales: { stroke: "#4f46e5", fill: "#4f46e5" },
@@ -68,15 +71,6 @@ const SalesChart = () => {
     <ChartBox>
       <ResponsiveContainer height={137} width={"100%"}>
         <AreaChart data={data} width={700}>
-          <Area
-            dataKey="totalSales"
-            type="monotone"
-            stroke={colors.totalSales.stroke}
-            fill={colors.totalSales.fill}
-            name="Total Sales"
-            unit="$"
-          />
-
           <XAxis
             dataKey="label"
             tick={{ fill: colors.text }}
@@ -97,6 +91,15 @@ const SalesChart = () => {
               backgroundColor: colors.background,
               borderRadius: "6.15px",
             }}
+          />
+
+          <Area
+            dataKey="totalSales"
+            type="monotone"
+            stroke={colors.totalSales.stroke}
+            fill={colors.totalSales.fill}
+            name="Total Sales"
+            unit="$"
           />
         </AreaChart>
       </ResponsiveContainer>

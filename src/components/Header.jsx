@@ -1,15 +1,17 @@
-import { HiOutlineMoon, HiArrowSmLeft } from "react-icons/hi";
+import { HiArrowSmLeft, HiArrowSmRight } from "react-icons/hi";
 import { ES, SA, US } from "country-flag-icons/react/3x2";
 import { AiOutlineGlobal } from "react-icons/ai";
+import { useTranslation } from "react-i18next";
 import { FaRegEdit } from "react-icons/fa";
 import styled from "styled-components";
-
-import ButttonIcon from "./ButttonIcon";
 import { useState } from "react";
-import LangItem from "./LangItem";
-import useClickOutside from "../hooks/useClickOutside";
-import { useTranslation } from "react-i18next";
 import Cookies from "js-cookie";
+
+import { useDirection } from "../context/DirectionContext";
+import useClickOutside from "../hooks/useClickOutside";
+import DarkModeToggle from "./DarkmodeToggle";
+import ButttonIcon from "./ButttonIcon";
+import LangItem from "./LangItem";
 
 const HeaderStyles = styled.header`
   display: flex;
@@ -32,7 +34,7 @@ const HeaderInfo = styled.div`
 `;
 
 const ArrowButton = styled.button`
-  background-color: (var--color-gray-300);
+  background-color: var(--color-gray-300);
   border-radius: var(--border-radius-md);
   padding: 1rem;
   transition: all 0.3s ease-in-out;
@@ -72,7 +74,6 @@ const LangsContainer = styled.div`
 
 const LangsList = styled.ul`
   position: absolute;
-  background-color: var(--color-white);
   box-shadow: 5px 2px 5px 3px rgba(0, 0, 0, 0.3);
   margin-top: 1.2rem;
   top: 100%;
@@ -83,7 +84,7 @@ const LangsList = styled.ul`
   overflow: hidden;
   z-index: 999;
   padding: 5px;
-  background-color: #fff;
+  background-color: var(--color-gray-0);
 
   body[dir="ltr"] & {
     right: 0;
@@ -98,7 +99,7 @@ const LangsList = styled.ul`
     display: flex;
     align-items: center;
     gap: 1rem;
-    border-bottom: 1px solid var(--color-gray-8);
+    border-bottom: 1px solid var(--color-gray-800);
     padding: 1.2rem 1.2rem;
 
     &:hover {
@@ -120,6 +121,7 @@ const LangsList = styled.ul`
 
 const Header = () => {
   const { t } = useTranslation();
+  const { direction } = useDirection();
   const currentLangCode = Cookies.get("i18next");
   const [showLangs, setShowLangs] = useState(false);
   const ref = useClickOutside(() => setShowLangs(false));
@@ -128,7 +130,7 @@ const Header = () => {
     <HeaderStyles>
       <HeaderInfo>
         <ArrowButton>
-          <HiArrowSmLeft />
+          {direction === "ltr" ? <HiArrowSmLeft /> : <HiArrowSmRight />}
         </ArrowButton>
 
         <TicketId>{t("ticketId", { id: "123" })}</TicketId>
@@ -141,9 +143,7 @@ const Header = () => {
           <FaRegEdit />
         </ButttonIcon>
 
-        <ButttonIcon>
-          <HiOutlineMoon />
-        </ButttonIcon>
+        <DarkModeToggle />
 
         <LangsContainer ref={ref}>
           <ButttonIcon onClick={() => setShowLangs((prev) => !prev)}>

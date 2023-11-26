@@ -28,17 +28,47 @@ const GlobalStyles = createGlobalStyle`
   --color-gray-1200:#99A1B7;
   --color-gray-1300:#D9D9D9;
   --color-gray-1400:#292D32;
+  --color-gray-1500:#e3e4e9;
+  --color-gray-1600:#e8e8e8;
 
   
-  --backdrop-color: rgba(255, 255, 255, 0.1);
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
   --shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.12);
   
+  
 
-  --image-grayscale: 0;
-  --image-opacity: 100%;
+  }
+
+  &.dark-mode {
+
+    --color-black: #fff;
+    --color-brand: #8a74f9;
+    --color-gray-0: #000;
+    --color-gray-50: #222;
+
+
+    
+  --color-gray-100: #1d1c1a;
+  --color-gray-200: #7e6f63;
+  --color-gray-300: #292623;
+  --color-gray-400: #272626;
+  --color-gray-500: #e7e3de;
+  --color-gray-600: #f2f3d7;
+  --color-gray-700: #f4f4e8;
+  --color-gray-800: #141414;
+  --color-gray-900:#747371;
+  --color-gray-1000:#65665f;
+  --color-gray-1400:#e7e3de;
+  --color-gray-1100:#2d2c27;
+  --color-gray-1200:#776f59;
+  --color-gray-1300:#373737;
+  --color-gray-1500:#2d2c27;
+  /* --color-gray-1600:#e8e8e8; */
+  --color-gray-1600:#e8e8e8;
+
+
   }
 }
 

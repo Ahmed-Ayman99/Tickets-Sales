@@ -16,6 +16,7 @@ const PagesCounts = styled.div`
 `;
 
 const PageButton = styled.button`
+  color: var(--color-black);
   background-color: transparent;
   border-radius: var(--border-radius-tiny);
   width: 2.7rem;

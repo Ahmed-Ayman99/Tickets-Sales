@@ -25,8 +25,7 @@ const HeadField = styled.div`
 `;
 
 const HeaderStyles = styled.div`
-  /* background-color: var(--color-gray-1100); */
-  background-color: #e3e4e9;
+  background-color: var(--color-gray-1500);
   display: grid;
   grid-column: 1/9;
   width: 100%;

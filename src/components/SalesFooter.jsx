@@ -5,6 +5,7 @@ const Footer = styled.footer`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 3.4rem;
 
   @media (max-width: 25em) {
     & {
@@ -20,7 +21,7 @@ const Progress = styled.p`
   font-size: 1.05rem;
   line-height: 1.256rem;
   font-weight: 400;
-  color: #333;
+  color: var(--color-gray-700);
 
   span {
     font-weight: 600;
