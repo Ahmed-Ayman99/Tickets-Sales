@@ -9,8 +9,6 @@ const Card = styled.div`
 `;
 
 const CardContainer = styled.div`
-  /* @media (max-width: 25em) { */
-
   @media (max-width: 72em) {
     & {
       padding: 0 22rem;
@@ -21,6 +19,13 @@ const CardContainer = styled.div`
   @media (max-width: 50em) {
     & {
       padding: 0 12rem;
+      margin-bottom: 3.2rem;
+    }
+  }
+
+  @media (max-width: 35em) {
+    & {
+      padding: 0 5rem;
       margin-bottom: 3.2rem;
     }
   }

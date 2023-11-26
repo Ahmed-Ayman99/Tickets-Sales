@@ -8,17 +8,17 @@ const ChartStatsStyles = styled.section`
   grid-template-columns: 1fr 40.8rem;
   margin-bottom: 2.4rem;
 
-  @media (max-width: 25em) {
-    & {
-      padding: 1rem !important;
-    }
-  }
-
   @media (max-width: 72em) {
     & {
       padding: 0 2.4rem;
       gap: 4.4rem;
       grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 25em) {
+    & {
+      padding: 1rem !important;
     }
   }
 `;
