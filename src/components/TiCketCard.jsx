@@ -6,34 +6,22 @@ import TicketCode from "./TicketCode";
 const Card = styled.div`
   background-color: var(--color-brand);
   border-radius: var(--border-radius-lg);
+
+  @media (max-width: 72em) {
+    & {
+      flex-grow: 1;
+      max-width: 50rem;
+      margin-bottom: 0 auto 3.2rem;
+    }
+  }
 `;
 
 const CardContainer = styled.div`
   @media (max-width: 72em) {
     & {
-      padding: 0 22rem;
       margin-bottom: 3.2rem;
-    }
-  }
-
-  @media (max-width: 50em) {
-    & {
-      padding: 0 12rem;
-      margin-bottom: 3.2rem;
-    }
-  }
-
-  @media (max-width: 35em) {
-    & {
-      padding: 0 5rem;
-      margin-bottom: 3.2rem;
-    }
-  }
-
-  @media (max-width: 25em) {
-    & {
-      padding: 0 1.2rem;
-      margin-bottom: 3.2rem;
+      display: flex;
+      justify-content: center;
     }
   }
 `;

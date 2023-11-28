@@ -15,7 +15,7 @@ const SalesSection = () => {
   const pagesCount = Math.ceil(count / PAGE_SIZE);
 
   const from = PAGE_SIZE * (currentPage - 1);
-  const to = PAGE_SIZE * currentPage;
+  const to = PAGE_SIZE * currentPage > count ? count : PAGE_SIZE * currentPage;
   const currentData =
     direction === "ltr"
       ? DEMO_DATA.slice(from, to)

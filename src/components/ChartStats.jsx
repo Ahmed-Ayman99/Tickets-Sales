@@ -15,12 +15,6 @@ const ChartStatsStyles = styled.section`
       grid-template-columns: 1fr;
     }
   }
-
-  @media (max-width: 25em) {
-    & {
-      padding: 1rem !important;
-    }
-  }
 `;
 
 const ChartStats = () => {
